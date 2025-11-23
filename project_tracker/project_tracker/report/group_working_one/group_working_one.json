@@ -1,0 +1,46 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2025-11-21 15:09:09.703072",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "",
+ "letterhead": null,
+ "modified": "2025-11-23 12:34:44.385045",
+ "modified_by": "Administrator",
+ "module": "Project Tracker",
+ "name": "Group Working one",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT\r\n    gw.name AS project,\r\n    COUNT(nt.name) AS total_tasks,\r\n    SUM(CASE WHEN nt.status = 'To Do' THEN 1 ELSE 0 END) AS todo_tasks,\r\n    SUM(CASE WHEN nt.status = 'In Progress' THEN 1 ELSE 0 END) AS in_progress_tasks,\r\n    SUM(CASE WHEN nt.status = 'Completed' THEN 1 ELSE 0 END) AS completed_tasks,\r\n    \r\n    CASE \r\n        WHEN COUNT(nt.name) = 0 THEN 0\r\n        ELSE ROUND(\r\n            (SUM(CASE WHEN nt.status = 'Completed' THEN 1 ELSE 0 END) / COUNT(nt.name)) * 100,\r\n            2\r\n        )\r\n    END AS progress_percentage\r\n\r\nFROM `tabGroup Working` gw\r\nLEFT JOIN `tabNew Task` nt\r\n    ON nt.parent = gw.name\r\n    AND nt.parenttype = 'Group Working'\r\nGROUP BY gw.name;\r\n",
+ "ref_doctype": "Group Working",
+ "reference_report": "Group Working",
+ "report_name": "Group Working one",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Finance Manager"
+  },
+  {
+   "role": "Team Manager"
+  },
+  {
+   "role": "Team Lead"
+  },
+  {
+   "role": "Employee 1"
+  },
+  {
+   "role": "Employee 2"
+  }
+ ],
+ "timeout": 0
+}
