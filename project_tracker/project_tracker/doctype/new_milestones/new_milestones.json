@@ -15,22 +15,26 @@
   {
    "fieldname": "milestone_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Milestone Name"
   },
   {
    "fieldname": "project",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Project",
    "options": "Group Working"
   },
   {
    "fieldname": "due_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Due Date"
   },
   {
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Status",
    "options": "Pending\nApproaching\nCompleted"
   }
@@ -39,7 +43,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-11-21 11:08:37.449869",
+ "modified": "2025-11-25 11:06:05.930694",
  "modified_by": "Administrator",
  "module": "Project Tracker",
  "name": "New Milestones",

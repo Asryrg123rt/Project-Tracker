@@ -1,0 +1,30 @@
+{
+ "attach_print": 0,
+ "channel": "System Notification",
+ "condition": "doc.status == \"Assigned\" and doc.assigned_to\r\n",
+ "creation": "2025-11-25 10:57:13.737191",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Group Working",
+ "enabled": 1,
+ "event": "Save",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "",
+ "message_type": "Markdown",
+ "modified": "2025-11-25 10:59:14.135075",
+ "modified_by": "Administrator",
+ "module": "Project Tracker",
+ "name": "New Task Allocated",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_document_field": "owner",
+   "receiver_by_role": "Employee 1"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "subject": "New Task {{ doc.name }} Submission"
+}

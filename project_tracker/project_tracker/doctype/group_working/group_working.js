@@ -21,11 +21,11 @@ frappe.ui.form.on("New Task", {
 
         let diff = due.diff(today, "days");
  
-        if (diff <= 0) {
+        if (diff <= 10) {
 
             row.priority = "High";
 
-        } else if (diff === 10) {
+        } else if (diff === 20) {
 
             row.priority = "Medium";
 

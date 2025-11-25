@@ -43,9 +43,8 @@
   },
   {
    "fieldname": "progress",
-   "fieldtype": "Select",
-   "label": "%completed",
-   "options": "0%\n25%\n50%\n100%"
+   "fieldtype": "Percent",
+   "label": "completed"
   },
   {
    "fieldname": "task",
@@ -84,7 +83,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-21 13:50:03.519609",
+ "modified": "2025-11-25 12:48:30.096459",
  "modified_by": "Administrator",
  "module": "Project Tracker",
  "name": "Group Working",
