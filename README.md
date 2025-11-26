@@ -1,33 +1,54 @@
 ### Project Tracker
 
-Task
+### Overview
+I created a Finance project with a parent DocType named Group Working.
+Under this parent,I added two child table DocTypes:
 
-### Installation
+1.New Task
 
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
+2.New Milestones
 
-```bash
-cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch develop
-bench install-app project_tracker
-```
+These child DocTypes are included inside the Group Working parent DocType as table fields.
+This structure allows you to store multiple tasks and milestones under one Group Working record, making it easy to manage related activities in a structured and organized way.
 
-### Contributing
+### Technologies Used
+1.Framework: Frappe
 
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
+2.Server-side: Python
 
-```bash
-cd apps/project_tracker
-pre-commit install
-```
+3.Client-side: JavaScript
 
-Pre-commit is configured to use the following tools for checking and formatting your code:
+### Reports
+A custom Query Report was created using the Task table to track and analyze the progress of tasks under the project.
+The report uses the Status field from each task to categorize and calculate task distribution across different stages.
 
-- ruff
-- eslint
-- prettier
-- pyupgrade
+The report provides the following insights:
 
-### License
+Total Tasks
+Counts all tasks available in the Task table.
 
-mit
+To-Do Tasks
+Filters and counts tasks whose status is marked as "To Do".
+
+In-Progress Tasks
+Counts tasks that are currently "In Progress".
+
+Completed Tasks
+Counts tasks marked as "Completed".
+
+Based on these values, the report also calculates the overall progress of the project.
+Progress is measured by comparing the number of completed tasks against the total number of tasks.
+
+### Dashboard
+1.Active projects 
+
+2.Overdue tasks 
+
+3.Near deadlines
+
+
+### Print formats
+I created a custom print format that displays the total number of tasks and milestones available for a project.
+This allows users to quickly see how many tasks and milestones are included without manually counting them.
+
+After that,I created a Task Assignment setup, where tasks are assigned to specific users.
